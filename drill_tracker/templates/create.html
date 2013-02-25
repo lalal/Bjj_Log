@@ -1,0 +1,45 @@
+{% block title %}Create Drill{% endblock %}
+
+{% block main %}
+
+{% if user.is_authenticated %}
+<head>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css" />
+  <script>
+  $(function() {
+    $( "#startdate" ).datepicker();
+    $( "#enddate" ).datepicker();
+  });
+  </script>
+</head>
+ 
+ 
+<form method="post" action="/drill_tracker/"> 
+
+<label>Name:</label>
+<input type='text'> <br>
+
+<label>Start Date:</label>
+<input type='text' id="startdate"><br>
+
+<label>End Date:</label>
+<input type='text' id="enddate"><br>
+
+<label>Link:</label>
+<input type='text'><br>
+
+<label>Total Reps:</label>
+<input type='text'><br>
+
+<input type="submit">
+
+</form>
+{% else %}
+{% endif %}
+
+
+{% endblock %}

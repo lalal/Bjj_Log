@@ -1,0 +1,27 @@
+{% block title %}Home{% endblock %}
+
+{% block scripts %}
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/datatable/assets/skins/sam/datatable.css">
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/paginator/assets/skins/sam/paginator.css">
+{% endblock %}
+
+{% block main %}
+
+{% if user.is_authenticated %}
+    Welcome to your doom.<br>
+    <div class="navigation">
+    <div class="menu">
+        <a href="/drill_tracker/">Drill Tracker</a>
+        <div>
+            <a href="/drill_tracker/">Create New Drill</a>
+            <a href="/drill_tracker/check_or_update/">Check/Update Drills</a>
+        </div>
+    </div>
+    </div>
+    <a href="/logout/">Logout</a>
+{% else %}
+    <a href="/login/">Login</a>
+{% endif %}
+
+
+{% endblock %}
