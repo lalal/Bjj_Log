@@ -1,25 +1,56 @@
-{% block title %}Home{% endblock %}
-
 {% block scripts %}
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/datatable/assets/skins/sam/datatable.css">
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/paginator/assets/skins/sam/paginator.css">
+    <script src="http://yui.yahooapis.com/3.8.1/build/yui/yui-min.js"></script>
+
+	<script>
+	// Create a YUI sandbox on your page.
+	YUI().use('node-menunav', function (Y) {
+		var menu = Y.one("#front_menu");
+		menu.plug(Y.Plugin.NodeMenuNav);
+	});
+	</script>
 {% endblock %}
 
 {% block main %}
+<body class="yui3-skin-sam">
 
 {% if user.is_authenticated %}
-    Welcome to your doom.<br>
-    <div class="navigation">
-    <div class="menu">
-        <a href="/drill_tracker/">Drill Tracker</a>
-        <div>
-            <a href="/drill_tracker/">Create New Drill</a>
-            <a href="/drill_tracker/check_or_update/">Check/Update Drills</a>
-        </div>
+    <div id="front_menu" class="yui3-menu yui3-menu-horizontal">
+    
+	    <div class="yui3-menu-content">
+	        <ul>
+	        <li>
+                <a class="yui3-menu-label" href="#Home">Home</a>
+               <div id="home" class="yui3-menu">
+               <div class="yui3-menu_content">
+                <ul>
+                    <li class="yui3-menuitem">
+                       <a class="yui3-menuitem-content" href="/logout/">Logout</a>
+                    </li>
+               </ul>
+               </div>
+               </div>
+	        </li>
+	        <li>
+	            <a class="yui3-menu-label" href="/drill_tracker/">Drill Tracker</a>
+	           <div id="drill_tracker" class="yui3-menu">
+	           <div class="yui3-menu_content">
+		        <ul>
+			        <li class="yui3-menuitem">
+			           <a class="yui3-menuitem-content" href="/drill_tracker/">Create New Drill</a>
+			        </li>
+			        <li class="yui3-menuitem">
+			           <a class="yui3-menuitem-content" href="/drill_tracker/check_or_update/">Check/Update Drills</a>
+			        </li>
+		        </ul>
+		        </div>
+               </div>
+            </li>
+	        </ul>
+	    </div>
+	    
     </div>
-    </div>
-    <a href="/logout/">Logout</a>
 {% else %}
+    <a href="/logout/">Logout</a>
     <a href="/login/">Login</a>
 {% endif %}
 
