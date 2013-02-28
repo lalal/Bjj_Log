@@ -1,5 +1,3 @@
-{% block title %}Create Drill{% endblock %}
-
 {% block main %}
 
 {% if user.is_authenticated %}
@@ -16,28 +14,16 @@
   });
   </script>
 </head>
- 
- 
-<form method="post" action="/drill_tracker/"> 
+<h1>CURRENT DRILLS:</h1>
+{% for drill in all_drills %} 
+<h2>Drill Name: {{drill.name}}</h2>
+Start Date:  {{drill.sdate}} <br>
+End Date:  {{drill.edate}} <br>
+Video Link:  {{drill.link}} <br>
+Total Reps:  {{drill.total}}<br>
+<br>
+{% endfor %} 
 
-<label>Name:</label>
-<input name="name" type='text'> <br>
-
-<label>Start Date:</label>
-<input name="start" type='text' id="startdate"><br>
-
-<label>End Date:</label>
-<input name="end" type='text' id="enddate"><br>
-
-<label>Link:</label>
-<input name="link" type='text'><br>
-
-<label>Total Reps:</label>
-<input name="total" type='text'><br>
-
-<input type="submit">
-
-</form>
 {% else %}
 {% endif %}
 

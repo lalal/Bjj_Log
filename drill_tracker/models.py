@@ -16,7 +16,6 @@ class Drills(models.Model):
         verbose_name='URL link')
         
     sdate = models.DateTimeField(
-        auto_now_add=True, 
         db_column='sdate', 
         verbose_name='Start Date')
     
