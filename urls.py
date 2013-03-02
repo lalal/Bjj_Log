@@ -4,7 +4,7 @@ from drill_tracker.urls import urlpatterns as drill_urls
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', 'bjj_log.views.home'),
+    url(r'^$', 'bjj_log.views.base'),
     url(r'^login/$', 'bjj_log.views.login'),
     url(r'^logout/$', 'bjj_log.views.logout'),
     url(r'^register/$', 'bjj_log.views.register'),

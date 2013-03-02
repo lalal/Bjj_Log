@@ -104,6 +104,7 @@ ROOT_URLCONF = 'bjj_log.urls'
 
 TEMPLATE_DIRS = (
     '/Users/aloklal/programming/python/django/bjj_log/templates',
+    '/Users/aloklal/programming/python/django/bjj_log/drill_tracker/templates',
 )
 
 LOGIN_URL = '/login'

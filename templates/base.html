@@ -10,7 +10,11 @@
 	</script>
 {% endblock %}
 
-{% block main %}
+{%block base%}
+{%block header%}
+
+{%endblock%}
+{%block nav%}
 <body class="yui3-skin-sam">
 
 {% if user.is_authenticated %}
@@ -117,9 +121,14 @@
 	    
     </div>
 {% else %}
-    <a href="/logout/">Logout</a>
     <a href="/login/">Login</a>
 {% endif %}
+{% endblock %}
 
+{% block main %}
+{% endblock %}
+
+{% block bottom %}
+{% endblock %}
 
 {% endblock %}

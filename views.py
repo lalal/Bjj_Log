@@ -11,8 +11,8 @@ from django.template import RequestContext
 from bjj_log.forms import UserCreateForm
 
 @login_required
-def home(request):
-    return render(request, 'home.html')
+def base(request):
+    return render(request, 'base.html')
 
 
 def logout(request):
